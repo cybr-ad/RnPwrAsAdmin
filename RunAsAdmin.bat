@@ -96,7 +96,10 @@ echo  File: !PS_SCRIPT!
 echo ========================================================
 echo.
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "!PS_SCRIPT!"
+# powershell -NoProfile -ExecutionPolicy Bypass -File "!PS_SCRIPT!"
+
+powershell.exe -NoProfile -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; & '!PS_SCRIPT!'"
+
 
 echo.
 echo ========================================================
